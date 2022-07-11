@@ -81,7 +81,7 @@ class _HomeState extends State<Home> {
               Flexible(
                 child: FormHelper.submitButton("Start Meeting", () async {
                   var response = await startMeeting();
-                  final body = json.decode(response.body);
+                  final body = json.decode(response!.body);
                   final meetId = body["data"];
                   validateMeeting(meetId);
                 }),
